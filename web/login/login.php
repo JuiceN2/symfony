@@ -1,0 +1,38 @@
+<?php
+
+session_start();
+
+echo "\n";
+echo "<table width=\"300\" border=\"0\" align=\"center\" cellpadding=\"0\" cellspacing=\"1\" bgcolor=\"#CCCCCC\">\n";
+echo "<tr>\n";
+echo "<form name=\"form1\" method=\"post\" action=\"checklogin.php\">\n";
+echo "<td>\n";
+echo "<table width=\"100%\" border=\"0\" cellpadding=\"3\" cellspacing=\"1\" bgcolor=\"#FFFFFF\">\n";
+echo "<tr>\n";
+echo "<td colspan=\"3\"><strong>Member Login </strong></td>\n";
+echo "</tr>\n";
+echo "<tr>\n";
+echo "<td width=\"78\">Username</td>\n";
+echo "<td width=\"6\">:</td>\n";
+echo "<td width=\"294\"><input name=\"myusername\" type=\"text\" id=\"myusername\"></td>\n";
+echo "</tr>\n";
+echo "<tr>\n";
+echo "<td>Password</td>\n";
+echo "<td>:</td>\n";
+echo "<td><input name=\"mypassword\" type=\"text\" id=\"mypassword\"></td>\n";
+echo "</tr>\n";
+echo "<tr>\n";
+echo "<td>&nbsp;</td>\n";
+echo "<td>&nbsp;</td>\n";
+echo "<td><input type=\"submit\" name=\"Submit\" value=\"Login\"></td>\n";
+echo "</tr>\n";
+echo "</table>\n";
+echo "</td>\n";
+echo "</form>\n";
+echo "</tr>\n";
+echo "</table>\n";
+echo "\n";
+
+
+
+?>

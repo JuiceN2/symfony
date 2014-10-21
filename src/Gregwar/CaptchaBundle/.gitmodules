@@ -1,0 +1,3 @@
+[submodule "CaptchaBundle"]
+	path = CaptchaBundle
+	url = git://github.com/Gregwar/CaptchaBundle.git

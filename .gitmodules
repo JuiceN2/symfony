@@ -1,0 +1,3 @@
+[submodule "src/Cordova/UploaderBundle"]
+	path = src/Cordova/UploaderBundle
+	url = git://github.com/cordoval/UploaderExample.git

@@ -1,0 +1,30 @@
+delovnomesto:
+    path:     /
+    defaults: { _controller: "JanProjektBundle:Delovnomesto:index" }
+
+delovnomesto_show:
+    path:     /{id}/show
+    defaults: { _controller: "JanProjektBundle:Delovnomesto:show" }
+
+delovnomesto_new:
+    path:     /new
+    defaults: { _controller: "JanProjektBundle:Delovnomesto:new" }
+
+delovnomesto_create:
+    path:     /create
+    defaults: { _controller: "JanProjektBundle:Delovnomesto:create" }
+    requirements: { _method: post }
+
+delovnomesto_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "JanProjektBundle:Delovnomesto:edit" }
+
+delovnomesto_update:
+    path:     /{id}/update
+    defaults: { _controller: "JanProjektBundle:Delovnomesto:update" }
+    requirements: { _method: post|put }
+
+delovnomesto_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "JanProjektBundle:Delovnomesto:delete" }
+    requirements: { _method: post|delete }

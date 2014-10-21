@@ -1,0 +1,30 @@
+prijava:
+    path:     /
+    defaults: { _controller: "JanProjektBundle:Prijava:index" }
+
+prijava_show:
+    path:     /{id}/show
+    defaults: { _controller: "JanProjektBundle:Prijava:show" }
+
+prijava_new:
+    path:     /new
+    defaults: { _controller: "JanProjektBundle:Prijava:new" }
+
+prijava_create:
+    path:     /create
+    defaults: { _controller: "JanProjektBundle:Prijava:create" }
+    requirements: { _method: post }
+
+prijava_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "JanProjektBundle:Prijava:edit" }
+
+prijava_update:
+    path:     /{id}/update
+    defaults: { _controller: "JanProjektBundle:Prijava:update" }
+    requirements: { _method: post|put }
+
+prijava_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "JanProjektBundle:Prijava:delete" }
+    requirements: { _method: post|delete }

@@ -1,0 +1,125 @@
+<!-- src/Acme/DemoBundle/Resources/views/layout.html.twig -->
+
+<!DOCTYPE html>
+<html>
+<head>
+
+    <title>Prijava {{Prijava_item.ime}} {{Prijava_item.priimek}}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap -->
+    <link href="{{ asset('css/bootstrap.css') }}" rel="stylesheet" media="screen">
+
+    <!-- HTML5 Shim and Respond.js add IE8 support of HTML5 elements and media queries -->
+    {% include 'BraincraftedBootstrapBundle::ie8-support.html.twig' %}
+    <style>
+    	.data{
+    		padding-left:20px;
+        font-weight: bold;
+    	}
+    </style>
+</head>
+
+<body>
+   <nav class="navbar navbar-default" role="navigation">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/prva">Domov</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="/seznam_delovnih_mest">Seznam delovnih mest</a></li>
+        <li class="active"><a href="/seznam_prijav">Seznam prijav</a></li>
+      </ul>
+     
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="/login">Prijava</a></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Možnosti <span class="caret"></span></a>
+         <ul class="dropdown-menu" role="menu">
+            <li class="divider"></li>
+            <li><a href="/logout">Odjava</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+<!-- CONTENT -->
+  <!-- CONTENT -->
+    <!-- CONTENT -->
+      <!-- CONTENT -->
+        <!-- CONTENT -->
+          <!-- CONTENT -->
+
+                                                            <!-- Tabela z vrednostmi  -->
+          <table>
+          <tr>
+           <td>Naziv delovnega mesta</td>
+            <td><span class="data">{{ Prijava_item.naziv }}</span></td>
+          </tr>  
+          <tr> 
+           <td>Ime in Priimek</td>
+            <td><span class="data">{{ Prijava_item.ime }} {{ Prijava_item.priimek }}</span></td>
+          </tr>
+          <tr> 
+           <td>Datum rojstva</td>
+            <td><span class="data">{{ Prijava_item.datumrojstva|date('d-m-Y')}}</span></td>
+          </tr>  
+          <tr>
+           <td>Naslov</td>
+            <td><span class="data">{{ Prijava_item.naslov }}</span></td>
+          </tr>
+          <tr>
+           <td>Elektronski naslov</td>
+            <td><span class="data">{{ Prijava_item.enaslov }}</span></td>
+          </tr>
+          <tr>
+           <td>Telefon</td>
+            <td><span class="data">{{ Prijava_item.telefon }}</span></td>
+          </tr>
+          <tr>
+           <td>Hobiji</td>
+            <td><span class="data">{{ Prijava_item.hobiji }}</span></td>
+          </tr>
+          <tr>
+           <td>Linkedin profil</td>
+            <td><span class="data">{{ Prijava_item.linkedinprofil }}</span></td>
+          </tr>
+          <tr> 
+           <td>CV</td>
+            <td><span class="data">{{ Prijava_item.imageFile}}</span></td>
+          </tr>
+          <tr> 
+           <td>Profesionalna zgodovina</td>
+            <td><span class="data">{{ Prijava_item.profesionalnazgodovina}}</span></td>
+          </tr>
+          <tr> 
+           <td>Datum prijave</td>
+            <td><span class="data">{{ Prijava_item.datumdodajanja|date('d-m-Y') }}</span></td>
+          </tr>  
+          <tr>
+          </table>                                                                <!-- /Tabela z vrednostmi  -->
+        <hr>
+        <a class="btn btn-default" href="mailto:{{ Prijava_item.enaslov }}?Subject=Odgovor%20prijavo%20za%20delovno%20mesto">Odgovori na prijavo</a>
+        <hr>
+
+         <!-- CONTENT -->
+      <!-- CONTENT -->
+    <!-- CONTENT -->
+  <!-- CONTENT -->
+<!-- CONTENT -->
+    <!-- jQuery (necessary for Bootstraps JavaScript plugins) -->
+    <script src="{{ asset('js/jquery.js') }}"></script>
+    <!-- Include all JavaScripts, compiled by Assetic -->
+    <script src="{{ asset('js/bootstrap.js') }}"></script>
+</body>
+</html>

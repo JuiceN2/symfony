@@ -1,0 +1,6 @@
+Jan\ProjektBundle\Entity\Prijava
+    properties:
+        enaslov:
+           - Email:
+                  message: E-naslov "{{ enaslov }}" ni pravilnega formata.
+                  checkMX: true

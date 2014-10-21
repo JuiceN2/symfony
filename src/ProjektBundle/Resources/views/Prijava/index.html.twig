@@ -1,0 +1,61 @@
+{% extends '::base.html.twig' %}
+
+{% block body -%}
+    <h1>Prijava list</h1>
+
+    <table class="records_list">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Ime</th>
+                <th>Priimek</th>
+                <th>Naslov</th>
+                <th>Enaslov</th>
+                <th>Telefon</th>
+                <th>Datumrojstva</th>
+                <th>Datumdodajanja</th>
+                <th>Hobiji</th>
+                <th>Profesionalnazgodovina</th>
+                <th>Linkedinprofil</th>
+                <th>Linkdocv</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for entity in entities %}
+            <tr>
+                <td><a href="{{ path('prijava_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
+                <td>{{ entity.ime }}</td>
+                <td>{{ entity.priimek }}</td>
+                <td>{{ entity.naslov }}</td>
+                <td>{{ entity.enaslov }}</td>
+                <td>{{ entity.telefon }}</td>
+                <td>{% if entity.datumrojstva %}{{ entity.datumrojstva|date('Y-m-d H:i:s') }}{% endif %}</td>
+                <td>{% if entity.datumdodajanja %}{{ entity.datumdodajanja|date('Y-m-d H:i:s') }}{% endif %}</td>
+                <td>{{ entity.hobiji }}</td>
+                <td>{{ entity.profesionalnazgodovina }}</td>
+                <td>{{ entity.linkedinprofil }}</td>
+                <td>{{ entity.linkdocv }}</td>
+                <td>
+                <ul>
+                    <li>
+                        <a href="{{ path('prijava_show', { 'id': entity.id }) }}">show</a>
+                    </li>
+                    <li>
+                        <a href="{{ path('prijava_edit', { 'id': entity.id }) }}">edit</a>
+                    </li>
+                </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+        <ul>
+        <li>
+            <a href="{{ path('prijava_new') }}">
+                Create a new entry
+            </a>
+        </li>
+    </ul>
+    {% endblock %}

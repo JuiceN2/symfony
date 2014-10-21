@@ -1,0 +1,108 @@
+<!-- src/Acme/DemoBundle/Resources/views/layout.html.twig -->
+
+<!DOCTYPE html>
+<html>
+<head>
+
+    <title>Delovno mesto {{ Delovnomesto_item.naziv }}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap -->
+    <link href="{{ asset('css/bootstrap.css') }}" rel="stylesheet" media="screen">
+
+    <!-- HTML5 Shim and Respond.js add IE8 support of HTML5 elements and media queries -->
+    {% include 'BraincraftedBootstrapBundle::ie8-support.html.twig' %}
+    <style>
+    	.data{
+    		padding-left:20px;
+        font-weight: bold;
+    	}
+    </style>
+</head>
+
+<body>
+   <nav class="navbar navbar-default" role="navigation">     <!-- NAVBAR -->
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/prva">Domov</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="/seznam_delovnih_mest">Seznam delovnih mest</a></li>
+        <li class="active"><a href="/seznam_prijav">Seznam prijav</a></li>
+        <li class="active"><a href="/delovno_mesto/dodaj_delovno_mesto">Dodaj delovno mesto</a></li>
+      </ul>
+     
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="/login">Prijava</a></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Možnosti <span class="caret"></span></a>
+          <ul class="dropdown-menu" role="menu">
+            <li class="divider"></li>
+            <li><a href="/logout">Odjava</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>                                                    <!-- /NAVBAR -->
+<!-- CONTENT -->
+  <!-- CONTENT -->
+    <!-- CONTENT -->
+      <!-- CONTENT -->
+        <!-- CONTENT -->
+          <!-- CONTENT -->
+	<table>                                                       <!-- Tabela z vrednostmi  -->
+	 <table>
+          <tr>
+           <td>Naziv delovnega mesta</td>
+            <td><span class="data">{{ Delovnomesto_item.naziv }}</span></td>
+          </tr>  
+          <tr> 
+           <td>Opis</td>
+            <td><span class="data">{{ Delovnomesto_item.opis }} </span></td>
+          </tr>
+          <tr> 
+           <td>Zahteve</td>
+            <td><span class="data">{{ Delovnomesto_item.zahteve }}</span></td>
+          </tr>  
+          <tr>
+           <td>Kaj nudimo</td>
+            <td><span class="data">{{ Delovnomesto_item.kajnudimo }}</span></td>
+          </tr>
+          <tr> 
+           <td>Datum dodajanja</td>
+            <td><span class="data">{{ Delovnomesto_item.datumdodajanja|date('d-m-Y') }}</span></td>
+          </tr>  
+          <tr> 
+           <td>Datum veljavnosti</td>
+            <td><span class="data">{{ Delovnomesto_item.datumveljavnosti|date('d-m-Y') }}</span></td>
+          </tr> 
+          <tr> 
+           <td>Nujno</td>
+            <td><span class="data">{{ Delovnomesto_item.nujno }}</span></td>
+          </tr> 
+          </table>                                                                       <!--Konec tabele z vrednostmi-->
+
+	<hr/>
+      <a class="btn btn-default" href="/prijava/dodaj_prijavo">Prijavi se na delovno mesto</a>
+  <hr/>
+        <!-- CONTENT -->
+      <!-- CONTENT -->
+    <!-- CONTENT -->
+  <!-- CONTENT -->
+<!-- CONTENT -->
+    <!-- jQuery (necessary for Bootstraps JavaScript plugins) -->
+    <script src="{{ asset('js/jquery.js') }}"></script>
+    <!-- Include all JavaScripts, compiled by Assetic -->
+    <script src="{{ asset('js/bootstrap.js') }}"></script>
+</body>
+</html>

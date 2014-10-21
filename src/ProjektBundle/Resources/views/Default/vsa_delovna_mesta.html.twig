@@ -1,0 +1,5 @@
+{% for new in Delovnomesto %}
+
+<h3><a href="{{ path('jan_projekt_pokazi_delovno_mesto', {'id':  new.id  }) }}">{{ new.naziv }}</a></h3>
+
+{% endfor %}

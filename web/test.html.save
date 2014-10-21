@@ -1,0 +1,18 @@
+
+<?php
+    	$var=include 'checklogin.php';
+if($var==1)   
+echo ' <a href="/seznam_prijav">Seznam prijav</a>';
+	
+else
+echo 'Prijavite se za nadeljevanje';
+echo ' <a href="login/login.php">Prijava</a>';
+
+?>
+
+<br><hr>
+	<a href="/seznam_delovnih_mest">Seznam delovnih mest</a>
+	
+    </body>
+
+</html>

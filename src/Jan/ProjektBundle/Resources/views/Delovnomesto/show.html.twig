@@ -1,0 +1,56 @@
+{% extends '::base.html.twig' %}
+
+{% block body -%}
+    <h1>Delovnomesto</h1>
+
+    <table class="record_properties">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ entity.id }}</td>
+            </tr>
+            <tr>
+                <th>Naziv</th>
+                <td>{{ entity.naziv }}</td>
+            </tr>
+            <tr>
+                <th>Opis</th>
+                <td>{{ entity.opis }}</td>
+            </tr>
+            <tr>
+                <th>Zahteve</th>
+                <td>{{ entity.zahteve }}</td>
+            </tr>
+            <tr>
+                <th>Kajnudimo</th>
+                <td>{{ entity.kajnudimo }}</td>
+            </tr>
+            <tr>
+                <th>Datumveljavnosti</th>
+                <td>{{ entity.datumveljavnosti|date('Y-m-d H:i:s') }}</td>
+            </tr>
+            <tr>
+                <th>Datumdodajanja</th>
+                <td>{{ entity.datumdodajanja|date('Y-m-d H:i:s') }}</td>
+            </tr>
+            <tr>
+                <th>Nujno</th>
+                <td>{{ entity.nujno }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+        <ul class="record_actions">
+    <li>
+        <a href="{{ path('delovnomesto') }}">
+            Back to the list
+        </a>
+    </li>
+    <li>
+        <a href="{{ path('delovnomesto_edit', { 'id': entity.id }) }}">
+            Edit
+        </a>
+    </li>
+    <li>{{ form(delete_form) }}</li>
+</ul>
+{% endblock %}

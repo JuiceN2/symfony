@@ -1,0 +1,39 @@
+security:
+    encoders:
+        FOS\UserBundle\Model\UserInterface: sha512
+
+    role_hierarchy:
+        ROLE_ADMIN:       ROLE_USER
+        ROLE_SUPER_ADMIN: ROLE_ADMIN
+
+    providers:
+        fos_userbundle:
+            id: fos_user.user_provider.username
+
+    firewalls:
+        main:
+            pattern: ^/
+            form_login:
+                provider: fos_userbundle
+                csrf_provider: form.csrf_provider
+                login_path:  /login
+                use_forward:  false
+                check_path:  /login_check
+#               always_use_default_target_path:  true
+#               default_target_path: /prva
+#                success_handler: jan_security.component.authentication.handler.login_success_handler
+            logout:
+                path: /logout
+                target: /
+#                always_use_default_target_path:  true
+#                default_target_path: /prva
+#                success_handler: jan_security.component.authentication.handler.logout_success_handler
+            anonymous:    true
+
+    access_control:
+        - { path: ^/login$, role: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/register, role: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/resetting, role: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/admin/, role: ROLE_ADMIN }
+        - { path ^/delovno_mesto/dodaj_delovno_mesto, role: ROLE_USER }
+        - { path ^/seznam_prijav, role: ROLE_USER }

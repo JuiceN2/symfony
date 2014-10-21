@@ -1,0 +1,29 @@
+Jan\ProjektBundle\Entity\Delovnomesto:
+    type: entity
+    table: null
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        naziv:
+            type: string
+            length: 255
+        opis:
+            type: string
+            length: 255
+        zahteve:
+            type: string
+            length: 255
+        kajnudimo:
+            type: string
+            length: 255
+        datumveljavnosti:
+            type: datetime
+        datumdodajanja:
+            type: datetime
+        nujno:
+            type: boolean
+    lifecycleCallbacks: {  }

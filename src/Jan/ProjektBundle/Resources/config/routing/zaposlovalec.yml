@@ -1,0 +1,30 @@
+zaposlovalec:
+    path:     /
+    defaults: { _controller: "JanProjektBundle:Zaposlovalec:index" }
+
+zaposlovalec_show:
+    path:     /{id}/show
+    defaults: { _controller: "JanProjektBundle:Zaposlovalec:show" }
+
+zaposlovalec_new:
+    path:     /new
+    defaults: { _controller: "JanProjektBundle:Zaposlovalec:new" }
+
+zaposlovalec_create:
+    path:     /create
+    defaults: { _controller: "JanProjektBundle:Zaposlovalec:create" }
+    requirements: { _method: post }
+
+zaposlovalec_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "JanProjektBundle:Zaposlovalec:edit" }
+
+zaposlovalec_update:
+    path:     /{id}/update
+    defaults: { _controller: "JanProjektBundle:Zaposlovalec:update" }
+    requirements: { _method: post|put }
+
+zaposlovalec_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "JanProjektBundle:Zaposlovalec:delete" }
+    requirements: { _method: post|delete }

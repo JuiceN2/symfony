@@ -1,0 +1,42 @@
+Jan\ProjektBundle\Entity\Prijava:
+    type: entity
+    table: null
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        ime:
+            type: string
+            length: 255
+        priimek:
+            type: string
+            length: 255
+        naslov:
+            type: string
+            length: 255
+        enaslov:
+            type: string
+            length: 255
+        telefon:
+            type: string
+            length: '30'
+        datumrojstva:
+            type: datetime
+        datumdodajanja:
+            type: datetime
+        hobiji:
+            type: string
+            length: 255
+        profesionalnazgodovina:
+            type: string
+            length: 255
+        linkedinprofil:
+            type: string
+            length: 255
+        linkdocv:
+            type: string
+            length: 255
+    lifecycleCallbacks: {  }
