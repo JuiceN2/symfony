@@ -1,0 +1,4 @@
+symfonypraksa
+=============
+
+Projekt med prakso
