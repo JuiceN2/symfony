@@ -1,49 +1,63 @@
+#CRUD -> delovnomesto
 pokazi{jan_projekt_delovnomesto:
     resource: "@JanProjektBundle/Resources/config/routing/delovnomesto.yml"
     prefix:   /delovnomesto
-
+#CRUD -> prijava
 jan_projekt_prijava:
     resource: "@JanProjektBundle/Resources/config/routing/prijava.yml"
     prefix:   /prijava
-
+#CRUD -> zaposlovalec
 jan_projekt_zaposlovalec:
     resource: "@JanProjektBundle/Resources/config/routing/zaposlovalec.yml"
     prefix:   /zaposlovalec
 
+#Routing, ki pokaze seznam vseh delovnih mest
 jan_projekt_pokazi_seznam_delovnih_mest:
     pattern: /seznam_delovnih_mest/
     defaults: {_controller: JanProjektBundle:Default:pokazi_seznam}
 
+#Routing, ki pokaze posamezno prijavo
 jan_projekt_pokazi_delovno_mesto:
     pattern: delovno_mesto/{id}
     defaults: {_controller: JanProjektBundle:Default:pokazi}
     requirements:
       id: \d+
 
+#Routing za dodajanje novega delovnega mesta
 jan_projekt_dodaj:
     pattern: /delovno_mesto/dodaj_delovno_mesto
     defaults: {_controller: JanProjektBundle:Default:dodaj}
 
-
+#Routing, da pokaze seznam vseh prijav
 jan_projekt_pokazi_seznam_prijav:
     pattern: /seznam_prijav/
     defaults: {_controller: JanProjektBundle:Default:pokazi_seznam_prijav}
 
+#Routing, ki pokaze posamezno prijavo
 jan_projekt_pokazi_prijavo:
     pattern: prijava/{id}
     defaults: {_controller: JanProjektBundle:Default:pokazi_prijavo}
-    requirements:
-      id: \d+
+    requirements:   #ID prijave se nesme podvajati
+      id: \d+ 
 
+#Routing za dodajanje nove prijave INACTIVE
 jan_projekt_dodaj_prijavo:
     pattern: /prijava/dodaj_prijavo
     defaults: {_controller: JanProjektBundle:Default:dodaj_prijavo}
 
-
-jan_projekt_dodaj_prva:
-    pattern: /prva
+#Routing za index stran
+jan_projekt_prva:
+    pattern: /
     defaults: {_controller: JanProjektBundle:Default:prva}
 
+#Routing za stran na katero se preusmeri po uspesno dodani prijavi/delovnem mestu
 jan_projekt_success:
     pattern: /uspesno
     defaults: {_controller: JanProjektBundle:Default:success}
+
+#Routing za dodajanje jove prijave ACTIVE
+jan_projekt_dodaj_prijavo_na_delovno_mesto:
+    pattern: /delovno_mesto/{id}/prijava
+    defaults: {_controller: JanProjektBundle:Default:dodaj_prijavo}
+    requirements:  #ID prijave se nesme podvajati
+      id: \d+  

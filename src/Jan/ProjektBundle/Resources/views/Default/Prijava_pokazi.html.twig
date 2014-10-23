@@ -30,21 +30,21 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="/prva">Domov</a>
+      <a class="navbar-brand" href="/">Domov</a>
     </div>
 
-    <!-- Collect the nav links, forms, and other content for toggling -->
+     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
         <li class="active"><a href="/seznam_delovnih_mest">Seznam delovnih mest</a></li>
         <li class="active"><a href="/seznam_prijav">Seznam prijav</a></li>
+        <li class="active"><a href="/delovno_mesto/dodaj_delovno_mesto">Dodaj delovno mesto</a></li>
       </ul>
-     
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="/login">Prijava</a></li>
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown">Možnosti <span class="caret"></span></a>
-         <ul class="dropdown-menu" role="menu">
+          <ul class="dropdown-menu" role="menu">
+            <li><a href="/login">Prijava</a></li>
             <li class="divider"></li>
             <li><a href="/logout">Odjava</a></li>
           </ul>
@@ -63,47 +63,47 @@
                                                             <!-- Tabela z vrednostmi  -->
           <table>
           <tr>
-           <td>Naziv delovnega mesta</td>
-            <td><span class="data">{{ Prijava_item.naziv }}</span></td>
+            <td>ID delovnega mesta</td>
+            <td><span class="data"><a href="/delovno_mesto/{{ Prijava_item.naziv }}">{{ Prijava_item.naziv }}</a></span></td>
           </tr>  
           <tr> 
-           <td>Ime in Priimek</td>
+            <td>Ime in Priimek</td>
             <td><span class="data">{{ Prijava_item.ime }} {{ Prijava_item.priimek }}</span></td>
           </tr>
           <tr> 
-           <td>Datum rojstva</td>
+            <td>Datum rojstva</td>
             <td><span class="data">{{ Prijava_item.datumrojstva|date('d-m-Y')}}</span></td>
           </tr>  
           <tr>
-           <td>Naslov</td>
+            <td>Naslov</td>
             <td><span class="data">{{ Prijava_item.naslov }}</span></td>
           </tr>
           <tr>
-           <td>Elektronski naslov</td>
-            <td><span class="data">{{ Prijava_item.enaslov }}</span></td>
+            <td>Elektronski naslov</td>
+            <td><span class="data"><a href="mailto:{{ Prijava_item.enaslov }}">{{ Prijava_item.enaslov }}</a></span></td>
           </tr>
           <tr>
-           <td>Telefon</td>
+            <td>Telefon</td>
             <td><span class="data">{{ Prijava_item.telefon }}</span></td>
           </tr>
           <tr>
-           <td>Hobiji</td>
+            <td>Hobiji</td>
             <td><span class="data">{{ Prijava_item.hobiji }}</span></td>
           </tr>
           <tr>
-           <td>Linkedin profil</td>
-            <td><span class="data">{{ Prijava_item.linkedinprofil }}</span></td>
+            <td>Linkedin profil</td>
+            <td><span class="data"><a href="{{ Prijava_item.linkedinprofil }}">{{ Prijava_item.linkedinprofil }}</a></span></td>
           </tr>
           <tr> 
-           <td>CV</td>
-            <td><span class="data">{{ Prijava_item.imageFile}}</span></td>
+            <td>CV</td>
+            <td><span class="data"><a href="{{ vich_uploader_asset(Prijava_item,'imageName')}}">{{ Prijava_item.imageName }}</a></span></td>
           </tr>
           <tr> 
-           <td>Profesionalna zgodovina</td>
+            <td>Profesionalna zgodovina</td>
             <td><span class="data">{{ Prijava_item.profesionalnazgodovina}}</span></td>
           </tr>
           <tr> 
-           <td>Datum prijave</td>
+            <td>Datum prijave</td>
             <td><span class="data">{{ Prijava_item.datumdodajanja|date('d-m-Y') }}</span></td>
           </tr>  
           <tr>

@@ -15,7 +15,7 @@ class LoginSuccessHandler implements AuthenticationSuccessHandlerInterface
 	protected $router;
 	protected $security;
 	
-	public function __construct(Router $router, SecurityContext $security)
+	public function __construct(SecurityContext $security,Router $router)
 	{
 		$this->router = $router;
 		$this->security = $security;
@@ -24,19 +24,14 @@ class LoginSuccessHandler implements AuthenticationSuccessHandlerInterface
 	public function onAuthenticationSuccess(Request $request, TokenInterface $token)
 	{
 		
-		if ($this->security->isGranted('ROLE_SUPER_ADMIN'))
+		if ($this->security->isGranted('ROLE_USER'))
 		{
-			$response = new RedirectResponse($this->router->generate('category_index'));			
-		}
-		elseif ($this->security->isGranted('ROLE_ADMIN'))
-		{
-			$response = new RedirectResponse($this->router->generate('category_index'));
-		} 
-		elseif ($this->security->isGranted('ROLE_USER'))
-		{
+
 			// redirect the user to where they were before the login process begun.
-			$referer_url = $request->headers->get('referer');
-						
+			$referer_url = $request->getSession()->get('_security.main.target_path');
+			if($referer_url==NULL)
+			$response = new RedirectResponse('/');
+			else
 			$response = new RedirectResponse($referer_url);
 		}
 			

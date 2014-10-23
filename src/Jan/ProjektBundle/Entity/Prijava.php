@@ -1,5 +1,4 @@
 <?php
-
 namespace Jan\ProjektBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
@@ -9,6 +8,8 @@ use Vich\UploaderBundle\Mapping\Annotation as Vich;
 
 /**
  * Prijava
+ *@ORM\Entity
+ *@ORM\Table
  * @Vich\Uploadable
  */
 class Prijava
@@ -29,11 +30,13 @@ class Prijava
     private $priimek;
 
     /**
+     * @ORM\Column(type="string", length=255)     
      * @var string
      */
     private $naslov;
 
     /**
+     * @ORM\Column(type="string", length=255)      
      * @var string
      */
     private $Naziv;
@@ -85,7 +88,6 @@ class Prijava
        /**
      * @Assert\File(
      *     maxSize="5M",
-     *     mimeTypes={"image/png", "image/jpeg", "image/pjpeg"}
      * )
      * @Vich\UploadableField(mapping="imageName", fileNameProperty="imageName")
      *

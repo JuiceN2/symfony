@@ -3,18 +3,20 @@ services:
 #        class: Jan\ProjektBundle\Example
 #        arguments: [@service_id, "plain_value", %parameter%]
 
+
+#Servisa, ki se kliceta ob uspesnem loginu/logoutu
 parameters:
-    jan_security.component.authentication.handler.login_success_handler.class: Jan\ProjektBundle\Component\Authentication\Handler\LoginFailureHandler
-    jan_security.component.authentication.handler.logout_success_handler.class: Jan\ProjektBundle\Component\Authentication\Handler\LogoutSuccessHandler
+    jan_projekt.component.authentication.handler.login_success_handler.class: Jan\ProjektBundle\Component\Authentication\Handler\LoginSuccessHandler
+    jan_projekt.component.authentication.handler.logout_success_handler.class: Jan\ProjektBundle\Component\Authentication\Handler\LogoutSuccessHandler
     
 services:
-    jan_security.component.authentication.handler.login_success_handler:
-        class:  %jan_security.component.authentication.handler.login_success_handler.class%
-        arguments:  [@service_container, @router, @security.context]
+    jan_projekt.component.authentication.handler.login_success_handler:
+        class:  %jan_projekt.component.authentication.handler.login_success_handler.class%
+        arguments:  [@security.context, @router]
         tags:
             - { name: 'monolog.logger', channel: 'security' } 
-    jan_security.component.authentication.handler.logout_success_handler:
-        class:  %jan_security.component.authentication.handler.logout_success_handler.class%
-        arguments:  [@service_container, @router]
+    jan_projekt.component.authentication.handler.logout_success_handler:
+        class:  %jan_projekt.component.authentication.handler.logout_success_handler.class%
+        arguments:  [@router]
         tags:
             - { name: 'monolog.logger', channel: 'security' }

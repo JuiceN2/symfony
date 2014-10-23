@@ -68,22 +68,28 @@ swiftmailer:
     password:  "%mailer_password%"
     spool:     { type: memory }
 
+
+#Gregwar captcha nastavitve
 gregwar_captcha: ~
 
+
+#Nastavitve za f0s bundle
 fos_user:
     db_driver: orm
     firewall_name: main
     user_class: Jan\ProjektBundle\Entity\User
 
 
+#Nastavitve za upload bundle
 vich_uploader:
     db_driver: orm
 
-    mappings:
-      prijava_image:
-        uri_prefix: /prijava/dodaj_prijavo
-        upload_destination: %kernel.root_dir%/../web/datoteke/cv
+    mappings:                 
+      imageName:                                                          #Mora se ujemati z entiteto
+        uri_prefix: /datoteke/cv                                          #Lokacija
+        upload_destination: %kernel.root_dir%/../web/datoteke/cv          #Lokacija
 
-        inject_on_load:    true
-        delete_on_update:    true
-        delete_on_remove:    true
+        inject_on_load:    true                                           #
+        delete_on_update:    true                                         #Ce se spremeni, ko spremenimo vpis
+        delete_on_remove:    true                                         #Ce se zbrise, ko zbrisemo vpis
+

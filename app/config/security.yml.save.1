@@ -21,8 +21,9 @@ security:
                 check_path:  /login_check
 #               always_use_default_target_path:  true
 #               default_target_path: /prva
-                success_handler: jan_projekt.component.authentication.handler.login_success_handler
+#               success_handler: jan_projekt.component.authentication.handler.login_success_handler
                 use_referer: true
+                target_path_parameter: redirect_url
             logout:
                 path: /logout
                 target: /
@@ -38,7 +39,3 @@ security:
         - { path: ^/admin/, role: ROLE_ADMIN }
         - { path ^/delovno_mesto/dodaj_delovno_mesto, role: ROLE_USER }
         - { path ^/seznam_prijav, role: ROLE_USER }
-        - { path ^/prijava/id, role: ROLE_USER }
-        - { path ^/prijava, role: ROLE_USER }
-        - { path ^/delovnomesto, role: ROLE_USER }
-        - { path ^/zaposlovalec, role: ROLE_USER }

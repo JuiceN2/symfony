@@ -17,6 +17,9 @@ Jan\ProjektBundle\Entity\Prijava:
         naslov:
             type: string
             length: 255
+        Naziv:
+            type: string
+            lenght: 255
         enaslov:
             type: string
             length: 255
@@ -30,6 +33,9 @@ Jan\ProjektBundle\Entity\Prijava:
         hobiji:
             type: string
             length: 255
+        imageName:
+            type: string
+            lenght: 255
         profesionalnazgodovina:
             type: string
             length: 255
@@ -39,4 +45,5 @@ Jan\ProjektBundle\Entity\Prijava:
         linkdocv:
             type: string
             length: 255
+            nullable: true
     lifecycleCallbacks: {  }
