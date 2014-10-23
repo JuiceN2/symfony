@@ -33,7 +33,7 @@
       <ul class="nav navbar-nav">
         <li class="active"><a href="/seznam_delovnih_mest">Seznam delovnih mest</a></li>
         <li class="active"><a href="/seznam_prijav">Seznam prijav</a></li>
-        <li class="active"><a href="/delovno_mesto/dodaj_delovno_mesto">Dodaj delovno mesto</a></li>
+        <li class="active"><a href="/delovno_mesto/dodaj_delovno_mesto">Dodaj delovno mesto</a></li>      
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li class="dropdown">
@@ -54,25 +54,25 @@
       <!-- CONTENT -->
         <!-- CONTENT -->
           <!-- CONTENT -->
-<ul>
-  <table cellpadding="5px">
-    <tr>
-      <th>ID delovnega mesta</th>
-      <th>Ime</th>
-      <th>Priimek</th>
-    </tr>
-    {% for new in Prijava %}	
-    <tr>  
-      <td><h3><a href="{{path('jan_projekt_pokazi_prijavo', {'id':new.id  }) }}">{{ new.Naziv }}</a></h3></td>
-      <td><h3><a href="{{path('jan_projekt_pokazi_prijavo', {'id':new.id  }) }}">{{ new.ime }}</a></h3></td>
-      <td><h3><a href="{{path('jan_projekt_pokazi_prijavo', {'id':new.id  }) }}">{{ new.priimek }}</a></h3></td>
-    </tr>
-    <tr>
-      <td><hr></td>
-    </tr>
-  {% endfor %}
+<table cellpadding="5px" style="text-align:center">
+  <tr>
+    <th>ID delovnega mesta</th>
+    <th>Ime</th>
+    <th>Priimek</th>
+    <th>Datum prijave</th>
+  </tr>
+    {% for new in Prijava %}
+  <tr>  
+    <td><h3><a href="{{path('jan_projekt_pokazi_prijavo', {'id':new.id  }) }}">{{ new.Naziv }}</a></h3></td>
+    <td><h3><a href="{{path('jan_projekt_pokazi_prijavo', {'id':new.id  }) }}">{{ new.ime }}</a></h3></td>
+    <td><h3><a href="{{path('jan_projekt_pokazi_prijavo', {'id':new.id  }) }}">{{ new.priimek }}</a></h3></td>
+    <td><h3><a href="{{path('jan_projekt_pokazi_prijavo', {'id':new.id  }) }}">{{ new.datumdodajanja|date('d.m.Y') }}</a></h3></td>
+  </tr>
+  <tr>
+    <td><hr></td>
+  </tr> 
+    {% endfor %}
   </table>
-</ul>
         <!-- CONTENT -->
       <!-- CONTENT -->
     <!-- CONTENT -->

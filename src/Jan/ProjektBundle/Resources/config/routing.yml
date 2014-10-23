@@ -5,7 +5,7 @@ pokazi{jan_projekt_delovnomesto:
 #CRUD -> prijava
 jan_projekt_prijava:
     resource: "@JanProjektBundle/Resources/config/routing/prijava.yml"
-    prefix:   /prijava
+    prefix:   /prijave
 #CRUD -> zaposlovalec
 jan_projekt_zaposlovalec:
     resource: "@JanProjektBundle/Resources/config/routing/zaposlovalec.yml"

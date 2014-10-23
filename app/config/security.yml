@@ -36,9 +36,11 @@ security:
         - { path: ^/register, role: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/resetting, role: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/admin/, role: ROLE_ADMIN }
-        - { path ^/delovno_mesto/dodaj_delovno_mesto, role: ROLE_USER }
-        - { path ^/seznam_prijav, role: ROLE_USER }
-        - { path ^/prijava/id, role: ROLE_USER }
-        - { path ^/prijava, role: ROLE_USER }
-        - { path ^/delovnomesto, role: ROLE_USER }
-        - { path ^/zaposlovalec, role: ROLE_USER }
+        - { path: ^/delovno_mesto/dodaj_delovno_mesto, role: ROLE_USER }
+        - { path: ^/seznam_prijav, role: ROLE_USER }
+        - { path: ^/prijava/id, role: ROLE_USER }
+        - { path: ^/prijava, role: ROLE_USER }
+        - { path: ^/delovnomesto, role: ROLE_ADMIN }
+        - { path: ^/zaposlovalec, role: ROLE_ADMIN }
+        - { path: ^/prijave, role: ROLE_ADMIN }
+

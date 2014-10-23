@@ -72,11 +72,11 @@
           </tr>
           <tr> 
             <td>Datum rojstva</td>
-            <td><span class="data">{{ Prijava_item.datumrojstva|date('d-m-Y')}}</span></td>
+            <td><span class="data">{{ Prijava_item.datumrojstva|date('d.m.Y')}}</span></td>
           </tr>  
           <tr>
             <td>Naslov</td>
-            <td><span class="data">{{ Prijava_item.naslov }}</span></td>
+            <td><span class="data"><a href="http://maps.google.com/maps?q={{ Prijava_item.naslov }}">{{ Prijava_item.naslov }}</a></span></td>
           </tr>
           <tr>
             <td>Elektronski naslov</td>
@@ -104,7 +104,7 @@
           </tr>
           <tr> 
             <td>Datum prijave</td>
-            <td><span class="data">{{ Prijava_item.datumdodajanja|date('d-m-Y') }}</span></td>
+            <td><span class="data">{{ Prijava_item.datumdodajanja|date('d.m.Y') }}</span></td>
           </tr>  
           <tr>
           </table>                                                                <!-- /Tabela z vrednostmi  -->
